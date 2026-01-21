@@ -1,0 +1,413 @@
+<hr>
+<h1 id="zaktualizowany-opis-projektu-system-zarz-dzania-hotelem">ZAKTUALIZOWANY OPIS PROJEKTU – System zarządzania
+  hotelem</h1>
+<h2 id="grupa-c5-kapustinskaia-szczepanek-prakofyeva-">Grupa C5 (Kapustinskaia, Szczepanek, Prakofyeva)</h2>
+<hr>
+<h2 id="1-zasoby-ludzkie">1. Zasoby ludzkie</h2>
+<p>System będzie wykorzystywany przez <strong>wielopoziomowy zespół pracowników hotelu oraz zewnętrzne systemy</strong>:
+</p>
+<h3 id="-u-ytkownicy-bezpo-redni-aktorzy-g-wni-"><strong>Użytkownicy bezpośredni (aktorzy główni):</strong></h3>
+<ul>
+  <li><strong>Gość</strong> – osoba rezerwująca pokój, meldująca się, korzystająca z usług hotelu</li>
+  <li><strong>Recepcjonista</strong> – pracownik pierwszej linii obsługujący rezerwacje, check-in/check-out,
+    przydzielanie pokoi, kontakt z gośćmi</li>
+  <li><strong>Administrator</strong> – osoba zarządzająca systemem, kontami użytkowników, generująca raporty,
+    konfigurująca ceny i system</li>
+  <li><strong>Obsługa hotelowa (Housekeeping)</strong> – pracownicy odpowiedzialni za sprzątanie pokoi, aktualizację
+    statusu pokoi, zarządzanie inwentarzem pokoi, zgłaszanie braków w wyposażeniu i problemów technicznych</li>
+  <li><strong>Obs��uga techniczna</strong> – personel zajmujący się utrzymanim technicznym, naprawą usterek,
+    zarządzaniem inwentarzem technicznym</li>
+</ul>
+<h3 id="-aktorzy-wspieraj-cy-supporting-actors-"><strong>Aktorzy wspierający (supporting actors):</strong></h3>
+<ul>
+  <li><strong>System płatności</strong> – zewnętrzny system przetwarzający transakcje płatnicze (karty kredytowe,
+    przedpłaty, depozyty)</li>
+  <li><strong>System email</strong> – obsługa wysyłki powiadomień i potwierdzeń</li>
+</ul>
+<hr>
+<h2 id="2-procesy-technologiczne-podlegaj-ce-automatyzacji">2. Procesy technologiczne podlegające automatyzacji</h2>
+<p>System automatyzuje <strong>wszystkie kluczowe procesy operacyjne hotelu</strong>:</p>
+<h3 id="-a-zarz-dzanie-rezerwacjami-"><strong>A. Zarządzanie rezerwacjami</strong></h3>
+<ul>
+  <li><strong>Wyszukiwanie dostępnych pokoi</strong> według dat i preferencji</li>
+  <li><strong>Dokonanie rezerwacji</strong> z automatyczną weryfikacją dostępności i przetworzeniem płatności</li>
+  <li><strong>Modyfikacja rezerwacji</strong> z przeliczaniem ceny i aktualizacją dostępności</li>
+  <li><strong>Anulowanie rezerwacji</strong> z automatycznym zwrotem środków według polityki hotelu</li>
+  <li><strong>Przeglądanie historii rezerwacji</strong> dla gości i recepcji</li>
+  <li><strong>Weryfikacja dostępności pokoju</strong> w czasie rzeczywistym</li>
+  <li><strong>Weryfikacja polityki anulowania</strong> i naliczanie opłat</li>
+  <li><strong>Przypisywanie rezerwacji do pokoju</strong> (room assignment)</li>
+</ul>
+<h3 id="-b-obs-uga-pobytu-"><strong>B. Obsługa pobytu</strong></h3>
+<ul>
+  <li><strong>Zameldowanie gościa (check-in)</strong> z weryfikacją tożsamości, przypisaniem pokoju, pobraniem depozytu,
+    wydaniem karty dostępu</li>
+  <li><strong>Wymeldowanie gościa (check-out)</strong> z generowaniem faktury, przetworzeniem płatności końcowej,
+    zwolnieniem pokoju</li>
+  <li><strong>Przypisywanie pokoju do rezerwacji</strong> według typu i preferencji</li>
+  <li><strong>Przetworzenie płatności</strong> kartą/gotówką/przelewem</li>
+  <li><strong>Generowanie faktury/paragonu</strong></li>
+  <li><strong>Pobranie przedpłaty i depozytu zabezpieczającego</strong></li>
+  <li><strong>Upgrade pokoju</strong> na życzenie gościa (opcjonalnie)</li>
+</ul>
+<h3 id="-c-zarz-dzanie-pokojami-"><strong>C. Zarządzanie pokojami</strong></h3>
+<ul>
+  <li><strong>Aktualizacja statusu pokoju</strong> (wolny, zajęty, sprzątany, do naprawy, niedostępny)</li>
+  <li><strong>Planowanie sprzątania pokoi</strong> przez housekeeping</li>
+  <li><strong>Potwierdzenie ukończenia sprzątania</strong> pokoju</li>
+  <li><strong>Zgłaszanie braków w wyposażeniu</strong> pokoju</li>
+  <li><strong>Zarządzanie inwentarzem pokoju</strong> (dodawanie/usuwanie/zmiana stanu elementów: łóżko, TV,
+    klimatyzacja, minibar)</li>
+  <li><strong>Zgłaszanie usterek technicznych</strong> w pokojach</li>
+  <li><strong>Zarządzanie pralni�� hotelową</strong> (opcjonalnie)</li>
+</ul>
+<h3 id="-d-zarz-dzanie-klientami-"><strong>D. Zarządzanie klientami</strong></h3>
+<ul>
+  <li><strong>Identyfikacja gościa</strong> w systemie podczas rezerwacji/check-in</li>
+  <li><strong>Zarządzanie profilem gościa</strong> (tworzenie, edycja, przeglądanie)</li>
+  <li><strong>Tworzenie profilu nowego gościa</strong></li>
+  <li><strong>Edycja danych gościa</strong></li>
+  <li><strong>Przeglądanie historii pobytu gościa</strong></li>
+  <li><strong>Zarządzanie programem VIP</strong> (dodawanie/usuwanie gości VIP, benefity)</li>
+  <li><strong>Przypisanie pokoju VIP z dodatkowymi usługami</strong> (opcjonalnie, dla VIP)</li>
+</ul>
+<h3 id="-e-administracja-i-raporty-"><strong>E. Administracja i raporty</strong></h3>
+<ul>
+  <li><strong>Zarządzanie kontami użytkowników</strong> (dodawanie, edytowanie, dezaktywacja, zmiana uprawnień)</li>
+  <li><strong>Generowanie raportów finansowych</strong> (przychody, płatności, anulowania)</li>
+  <li><strong>Generowanie raportów statystycznych</strong> (obłożenie, średnie czasy, źródła rezerwacji)</li>
+  <li><strong>Generowanie raportów housekeeping</strong> (status pokoi, czas sprzątania)</li>
+  <li><strong>Zarządzanie cenami i sezonowością</strong> (ceny pokoi, promocje, okresy szczytowe)</li>
+  <li><strong>Konfiguracja systemu</strong> (parametry, ustawienia, integracje)</li>
+  <li><strong>Weryfikacja uprawnień administratora</strong> przed krytycznymi operacjami</li>
+  <li><strong>Aktualizacja środowiska technicznego</strong> (konserwacja systemu)</li>
+</ul>
+<hr>
+<h2 id="3-dane-techniczne">3. Dane techniczne</h2>
+<ul>
+  <li>
+    <p><strong>Liczba użytkowników:</strong> </p>
+    <ul>
+      <li>5–10 recepcjonistów</li>
+      <li>10–15 pracowników housekeeping</li>
+      <li>2–5 pracowników obsługi technicznej</li>
+      <li>1–2 administratorów</li>
+      <li>Setki gości (jednocześnie)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Profil użytkownika:</strong> </p>
+    <ul>
+      <li>Recepcja i housekeeping: osoby z podstawową obsługą komputera, bez wiedzy technicznej</li>
+      <li>Konieczność maksymalnej prostoty i intuicyjności interfejsu</li>
+      <li>Administratorzy: średnio-zaawansowana wiedza IT</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Środowisko wdrożeniowe:</strong></p>
+    <ul>
+      <li>Aplikacja webowa uruchamiana w przeglądarce (bez instalacji lokalnej)</li>
+      <li>Serwer aplikacji (Python + Streamlit) w sieci hotelowej lub chmurze</li>
+      <li>Baza danych PostgreSQL na serwerze hotelowym lub w chmurze</li>
+      <li>Komunikacja przez zabezpieczoną sieć WiFi hotelu lub VPN</li>
+      <li>Dostęp mobilny dla housekeeping (tablety)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Typowe urządzenia:</strong></p>
+    <ul>
+      <li>Komputery stacjonarne w recepcji (Windows 10/11, MacOS, Linux)</li>
+      <li>Tablety dla housekeeping (Android/iOS)</li>
+      <li>Laptop/komputer dla obsługi technicznej i administracji</li>
+      <li>Terminale płatnicze zintegrowane z systemem</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Oprogramowanie:</strong></p>
+    <ul>
+      <li>Python + Streamlit po stronie frontendu</li>
+      <li>PostgreSQL jako baza danych</li>
+      <li>Integracja z API płatno��ci (Stripe, PayPal, lokalne bramki)</li>
+      <li>System email (SMTP)</li>
+      <li>Automatyczne kopie zapasowe bazy danych co 24h</li>
+      <li>Tryb offline dla podstawowych operacji (synchronizacja po odzyskaniu połączenia)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Przetwarzane dane:</strong></p>
+    <ul>
+      <li>Dane osobowe gości (RODO/GDPR) ��� imię, nazwisko, email, telefon, adres, nr dokumentu</li>
+      <li>Dane rezerwacji – daty pobytu, typ pokoju, cena, status, historia zmian</li>
+      <li>Dane płatności – transakcje, przedpłaty, depozyty, faktury (szyfrowane, PCI DSS)</li>
+      <li>Statusy pokoi – dostępność, czystość, usterki, inwentarz</li>
+      <li>Zgłoszenia serwisowe – usterki, braki, czas naprawy</li>
+      <li>Dane operacyjne recepcji – logi, statystyki, raporty zmian</li>
+      <li>Historia gości – poprzednie pobyty, preferencje, status VIP</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Bezpieczeństwo:</strong></p>
+    <ul>
+      <li>Szyfrowanie danych i połączeń (SSL/TLS)</li>
+      <li>Has��a hashowane (bcrypt/Argon2)</li>
+      <li>Automatyczne logowanie zmian i audyt działań użytkowników</li>
+      <li>Kopie zapasowe inkrementalne + pełne (cotygodniowe)</li>
+      <li>Kontrola dostępu oparta na rolach (RBAC)</li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<h2 id="4-wymagania-funkcjonalne">4. Wymagania funkcjonalne</h2>
+<p>System hotelowy musi umożliwiać następujące funkcje (pogrupowane według pakietów):</p>
+<h3 id="-a-zarz-dzanie-rezerwacjami-"><strong>A. Zarządzanie rezerwacjami</strong></h3>
+<ol>
+  <li><strong>Wyszukiwanie dostępnych pokoi</strong> według dat, typu pokoju, liczby osób, ceny</li>
+  <li><strong>Dokonanie rezerwacji</strong> z:<ul>
+      <li>Automatyczną weryfikacją dostępności pokoi</li>
+      <li>Identyfikacją gościa (istniejącego lub tworzenie nowego profilu)</li>
+      <li>Obliczaniem ceny całkowitej (z podatkami, opłatami lokalnymi, rabatami VIP)</li>
+      <li>Przetworzeniem płatności przedpłaty (30–100%)</li>
+      <li>Generowaniem unikalnego numeru rezerwacji</li>
+      <li>Wysłaniem email z potwierdzeniem</li>
+    </ul>
+  </li>
+  <li><strong>Modyfikacja rezerwacji</strong> z:<ul>
+      <li>Zmianą dat, typu pokoju, liczby osób</li>
+      <li>Przeliczeniem ceny</li>
+      <li>Weryfikacją uprawnień (czy gość może modyfikować)</li>
+      <li>Powiadomieniem email o zmianach</li>
+    </ul>
+  </li>
+  <li><strong>Anulowanie rezerwacji</strong> z:<ul>
+      <li>Weryfikacją polityki anulowania (zwrot pełny/częściowy/brak)</li>
+      <li>Naliczaniem opłat za anulowanie (jeśli applicable)</li>
+      <li>Automatycznym zwrotem środków</li>
+      <li>Zwolnieniem pokoju w systemie</li>
+    </ul>
+  </li>
+  <li><strong>Przeglądanie historii rezerwacji</strong> dla gościa i recepcji</li>
+  <li><strong>Przypisywanie rezerwacji do konkretnego pokoju</strong> (ręcznie lub algorytm room-puzzle)</li>
+</ol>
+<h3 id="-b-obs-uga-pobytu-"><strong>B. Obsługa pobytu</strong></h3>
+<ol>
+  <li><strong>Zameldowanie go��cia</strong> z:<ul>
+      <li>Wyszukaniem rezerwacji</li>
+      <li>Weryfikacją tożsamości (dokument)</li>
+      <li>Przypisaniem konkretnego numeru pokoju</li>
+      <li>Pobraniem depozytu zabezpieczającego (autoryzacja karty)</li>
+      <li>Programowaniem karty dostępu do pokoju</li>
+      <li>Wydaniem karty, vouchera na śniadanie, mapy hotelu</li>
+      <li>Aktualizacją statusu rezerwacji (&quot;checked-in&quot;) i pokoju (&quot;occupied&quot;)</li>
+      <li>Wysłaniem email z potwierdzeniem zameldowania</li>
+    </ul>
+  </li>
+  <li><strong>Wymeldowanie gościa</strong> z:<ul>
+      <li>Obliczeniem końcowego rachunku (noclegi + room service + minibar + inne usługi)</li>
+      <li>Przetworzeniem płatności końcowej</li>
+      <li>Generowaniem faktury/paragonu</li>
+      <li>Odebraniem karty dostępu</li>
+      <li>Aktualizacją statusu rezerwacji (&quot;completed&quot;) i pokoju (&quot;dirty&quot;)</li>
+      <li>Zwolnieniem depozytu</li>
+      <li>Powiadomieniem housekeeping o zwolnieniu pokoju</li>
+    </ul>
+  </li>
+  <li><strong>Upgrade pokoju</strong> na życzenie gościa (z dopłatą lub dla VIP bezpłatnie)</li>
+</ol>
+<h3 id="-c-zarz-dzanie-pokojami-"><strong>C. Zarządzanie pokojami</strong></h3>
+<ol>
+  <li><strong>Aktualizacja statusu pokoju</strong>:<ul>
+      <li>Wolny (available)</li>
+      <li>Zajęty (occupied)</li>
+      <li>Sprzątany (being cleaned)</li>
+      <li>Gotowy (clean/ready)</li>
+      <li>Do sprzątania (dirty)</li>
+      <li>W naprawie (under maintenance)</li>
+      <li>Niedostępny (unavailable)</li>
+    </ul>
+  </li>
+  <li><strong>Planowanie sprzątania pokoi</strong> przez housekeeping (lista zadań na zmianę)</li>
+  <li><strong>Potwierdzenie ukończenia sprzątania</strong> z możliwością dodania notatek</li>
+  <li><strong>Zgłaszanie braków w wyposażeniu</strong> (np. brak ręczników, uszkodzony fen)</li>
+  <li><strong>Zarządzanie inwentarzem pokoju</strong>:<ul>
+      <li>Dodawanie elementów (np. nowe łóżko, TV)</li>
+      <li>Usuwanie elementów (np. wymiana starego wyposażenia)</li>
+      <li>Zmiana stanu (sprawny, uszkodzony, w naprawie)</li>
+    </ul>
+  </li>
+  <li><strong>Zgłaszanie usterek technicznych</strong> (np. klimatyzacja nie działa, przeciek)</li>
+  <li><strong>Zarządzanie pralnią hotelową</strong> (opcjonalne – pranie pościeli, ręczników)</li>
+</ol>
+<h3 id="-d-zarz-dzanie-klientami-"><strong>D. Zarządzanie klientami</strong></h3>
+<ol>
+  <li><strong>Identyfikacja gościa</strong> podczas rezerwacji/check-in (sprawdzenie czy istnieje w systemie)</li>
+  <li><strong>Tworzenie profilu nowego gościa</strong> z danymi: imię, nazwisko, email, telefon, adres, preferencje</li>
+  <li><strong>Edycja profilu gościa</strong> (aktualizacja danych kontaktowych, preferencji)</li>
+  <li><strong>Przeglądanie profilu i historii gościa</strong> (poprzednie pobyty, wydatki, status VIP)</li>
+  <li><strong>Zarządzanie programem VIP</strong>:<ul>
+      <li>Dodawanie gości do programu VIP (Gold/Platinum/Diamond)</li>
+      <li>Usuwanie z programu VIP</li>
+      <li>Przypisywanie benefitów (late check-out, rabaty, upgrade)</li>
+      <li>Automatyczne naliczanie punktów lojalnościowych</li>
+    </ul>
+  </li>
+</ol>
+<h3 id="-e-administracja-"><strong>E. Administracja</strong></h3>
+<ol>
+  <li><strong>Zarządzanie kontami użytkowników</strong>:<ul>
+      <li>Tworzenie nowych kont (recepcjonista, housekeeping, obsługa techniczna, admin)</li>
+      <li>Edycja kont (zmiana hasła, uprawnień, roli)</li>
+      <li>Dezaktywacja/aktywacja kont</li>
+      <li>Przypisywanie ról i uprawnień (RBAC)</li>
+    </ul>
+  </li>
+  <li><strong>Generowanie raportów finansowych</strong>:<ul>
+      <li>Raport przychodów (dzienny, tygodniowy, miesięczny)</li>
+      <li>Raport płatności (gotówka vs karta vs przelew)</li>
+      <li>Raport anulowa�� (liczba, przyczyny, straty)</li>
+    </ul>
+  </li>
+  <li><strong>Generowanie raportów statystycznych</strong>:<ul>
+      <li>Obłożenie hotelu (%)</li>
+      <li>Średni czas pobytu</li>
+      <li>Źródła rezerwacji (direct, booking.com, etc.)</li>
+      <li>Najpopularniejsze typy pokoi</li>
+    </ul>
+  </li>
+  <li><strong>Generowanie raportów housekeeping</strong>:<ul>
+      <li>Status wszystkich pokoi</li>
+      <li>Średni czas sprzątania</li>
+      <li>Zgłoszone usterki i braki</li>
+    </ul>
+  </li>
+  <li><strong>Zarządzanie cenami i sezonowością</strong>:<ul>
+      <li>Ustawianie cen pokoi według typu</li>
+      <li>Definiowanie sezonów (szczyt, niska sezon, weekend)</li>
+      <li>Tworzenie promocji i rabatów</li>
+    </ul>
+  </li>
+  <li><strong>Konfiguracja systemu</strong>:<ul>
+      <li>Ustawienia hotelu (nazwa, adres, kontakt)</li>
+      <li>Parametry rezerwacji (godzina check-in/out, polityka anulowania)</li>
+      <li>Integracje (API płatności, email)</li>
+    </ul>
+  </li>
+</ol>
+<hr>
+<h2 id="5-wymagania-niefunkcjonalne">5. Wymagania niefunkcjonalne</h2>
+<ul>
+  <li>
+    <p><strong>Bezpieczeństwo:</strong></p>
+    <ul>
+      <li>Szyfrowanie wszystkich danych i połączeń (SSL/TLS, AES-256)</li>
+      <li>Zgodność z RODO/GDPR (prawo do usunięcia danych, eksport danych)</li>
+      <li>Zgodność z PCI DSS dla płatności kartami</li>
+      <li>Automatyczne kopie zapasowe (codziennie + inkrementalne co 6h)</li>
+      <li>Audyt wszystkich operacji krytycznych (kto, kiedy, co zmienił)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Niezawodność:</strong></p>
+    <ul>
+      <li>Dostępność systemu 99.9% czasu (max 8h przestoju/rok)</li>
+      <li>Automatyczny restart serwisu po awarii</li>
+      <li>Tryb offline dla podstawowych operacji recepcji</li>
+      <li>Mechanizmy failover dla bazy danych</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Wydajność:</strong></p>
+    <ul>
+      <li>Czas odpowiedzi na wyszukiwanie pokoi: max 2 sekundy</li>
+      <li>Czas przetworzenia płatności: max 5 sekund</li>
+      <li>Wsparcie dla jednoczesnych operacji 20+ użytkowników</li>
+      <li>Obsługa bazy 10 000+ rezerwacji bez spadku wydajności</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Łatwość obsługi:</strong></p>
+    <ul>
+      <li>Interfejs prosty i intuicyjny (max 3 kliki do wykonania operacji)</li>
+      <li>Podpowiedzi kontekstowe i pomoc online</li>
+      <li>Responsywny design (desktop, tablet, mobile)</li>
+      <li>Skróty klawiaturowe dla recepcji (power users)</li>
+      <li>Wielojęzyczność (polski, angielski, niemiecki)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Skalowalność:</strong></p>
+    <ul>
+      <li>Możliwość dodania nowych modułów (płatności online, integracja z booking.com)</li>
+      <li>Architektura pozwalająca na rozbudowę o kolejne hotele (multi-tenant)</li>
+      <li>Możliwość integracji z systemami zewnętrznymi (CRM, accounting)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Przenośność:</strong></p>
+    <ul>
+      <li>Działanie na różnych systemach operacyjnych (Windows, MacOS, Linux)</li>
+      <li>Działanie na różnych przegl��darkach (Chrome, Firefox, Safari, Edge)</li>
+      <li>Wsparcie dla urządzeń mobilnych (tablety dla housekeeping)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Odzyskiwanie po awarii:</strong></p>
+    <ul>
+      <li>Automatyczne kopie zapasowe co 24h (pełne) + co 6h (inkrementalne)</li>
+      <li>Procedura odtworzenia systemu w ciągu 4h</li>
+      <li>Backup w chmurze + lokalnie</li>
+      <li>Plan ciągłości działania (BCP)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Zgodność:</strong></p>
+    <ul>
+      <li>Kompatybilność z PostgreSQL 12+</li>
+      <li>Wsparcie dla API RESTful</li>
+      <li>Standardy UML dla dokumentacji</li>
+      <li>Zgodność z WCAG 2.1 (dostępność dla osób niepełnosprawnych)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Utrzymanie i aktualizacja:</strong></p>
+    <ul>
+      <li>Łatwe wdrażanie poprawek bez reinstalacji (hot deploy)</li>
+      <li>Automatyczne powiadomienia o dostępnych aktualizacjach</li>
+      <li>System logowania błędów i monitoringu wydajności</li>
+      <li>Wsparcie zdalne dla użytkowników (chat, email, telefon)</li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<h2 id="6-kluczowe-usprawnienia-w-stosunku-do-proces-w-manualnych">6. Kluczowe usprawnienia w stosunku do procesów
+  manualnych</h2>
+<ul>
+  <li><strong>Eliminacja błędów</strong> przy podwójnych rezerwacjach tego samego pokoju</li>
+  <li><strong>Automatyzacja powiadomień</strong> o zmianie statusów pokoi i zgłoszeniach technicznych</li>
+  <li><strong>Skrócenie czasu obsługi</strong> gościa (check-in z 10 min do 3 min)</li>
+  <li><strong>Centralizacja danych</strong> ��� jeden system zamiast rozproszonych notatek i Exceli</li>
+  <li><strong>Szybkie raportowanie</strong> stanu hotelu dla zarządu w czasie rzeczywistym</li>
+  <li><strong>Śledzenie usterek</strong> i czasu ich naprawy (KPI dla obsługi technicznej)</li>
+  <li><strong>Automatyczne naliczanie cen</strong> z uwzględnieniem sezonowości, promocji, VIP</li>
+  <li><strong>Historia gości</strong> – preferencje, poprzednie pobyty, reklamacje (lepsza obsługa)</li>
+  <li><strong>Integracja płatności</strong> – mniej błędów w rozliczeniach, szybsze wymeldowania</li>
+  <li><strong>Optymalizacja pracy housekeeping</strong> – planowanie sprzątania, priorytetyzacja</li>
+</ul>
+<hr>
+<h2 id="7-wnioski">7. Wnioski</h2>
+<p>Projektowany system hotelowy kompleksowo wspiera <strong>wszystkie działy hotelu</strong> – od recepcji, przez
+  housekeeping, obsługę techniczną, po administrację. Poprzez automatyzację kluczowych procesów możliwe jest:</p>
+<ul>
+  <li><strong>Zwiększenie efektywności</strong> pracy personelu</li>
+  <li><strong>Redukcja błędów</strong> operacyjnych</li>
+  <li><strong>Poprawa jakości obsługi</strong> gości</li>
+  <li><strong>Lepsze wykorzystanie zasobów</strong> (pokoje, personel)</li>
+  <li><strong>Łatwiejsze zarządzanie</strong> i raportowanie</li>
+</ul>
+<p>System został zaprojektowany zgodnie z <strong>najlepszymi praktykami UML</strong> i jest przygotowany do łatwej
+  rozbudowy, skalowalności oraz integracji z istniejącą infrastrukturą IT branży hotelarskiej.</p>
+<hr>
+<p><strong>Ten dokument powstał na podstawie rzeczywistego diagramu przypadków użycia zawierającego 38 przypadków
+    użycia, 5 pakietów funkcjonalnych, 6 aktorów głównych i 1 aktora wspierającego (System płatności).</strong></p>
+<p><strong>Projekt opracowany przez zespół C5 na zajęcia Inżynieria Oprogramowania – Laboratorium: Modelowanie wymagań i
+    przypadków użycia, Politechnika Wrocławska, październik 2025.</strong></p>
+e

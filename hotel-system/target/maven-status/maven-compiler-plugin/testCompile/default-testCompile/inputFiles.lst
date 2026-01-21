@@ -1,0 +1,13 @@
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/controller/TestRezerwacjeKontrolerMock.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/controller/TestWymeldowanieKontrolerMock.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/controller/TestZameldowanieKontrolerMock.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/dao/TestGoscieDAO.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/model/TestDodatki.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/model/TestGosc.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/model/TestPokoj.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/model/TestRezerwacja.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/suite/SuiteTestyEncji.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/suite/SuiteTestyKontroli.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/suite/SuiteTestyMock.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/suite/SuiteTestyParametryzowane.java
+/Users/gsk/documents/projects/5sem/IO/hotel-system/src/test/java/hotel/suite/SuiteTestyWalidacji.java
