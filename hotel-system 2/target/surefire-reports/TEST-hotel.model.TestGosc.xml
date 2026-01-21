@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="hotel.dao.TestGoscieDAO" time="0.03" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="hotel.model.TestGosc" time="0.042" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,6 +7,7 @@
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Warsaw"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -56,9 +57,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testZapisz_Null_RzucaWyjatek" classname="hotel.dao.TestGoscieDAO" time="0.012">
-    <system-out><![CDATA[Rozpoczęcie testów klasy GoscieDAO
+  <testcase name="testKonstruktor_PusteImie_RzucaWyjatek" classname="hotel.model.TestGosc" time="0.0">
+    <system-out><![CDATA[Rozpoczęcie testów klasy Gosc
 ]]></system-out>
   </testcase>
-  <testcase name="testAktualizuj_Null" classname="hotel.dao.TestGoscieDAO" time="0.001"/>
+  <testcase name="testKonstruktor_NullImie_RzucaWyjatek" classname="hotel.model.TestGosc" time="0.0"/>
+  <testcase name="testKonstruktor_NieprawidlowyEmail_RzucaWyjatek" classname="hotel.model.TestGosc" time="0.001"/>
+  <testcase name="testSetEmail_NieprawidlowyEmail_RzucaWyjatek" classname="hotel.model.TestGosc" time="0.001"/>
+  <testcase name="testNieprawidloweEmaile_ValueSource(String)[1]" classname="hotel.model.TestGosc" time="0.013"/>
+  <testcase name="testNieprawidloweEmaile_ValueSource(String)[2]" classname="hotel.model.TestGosc" time="0.001"/>
+  <testcase name="testNieprawidloweEmaile_ValueSource(String)[3]" classname="hotel.model.TestGosc" time="0.001"/>
+  <testcase name="testNieprawidloweEmaile_ValueSource(String)[4]" classname="hotel.model.TestGosc" time="0.001"/>
+  <testcase name="testPusteImiona_NullAndEmptySource(String)[1]" classname="hotel.model.TestGosc" time="0.001"/>
+  <testcase name="testPusteImiona_NullAndEmptySource(String)[2]" classname="hotel.model.TestGosc" time="0.001"/>
 </testsuite>

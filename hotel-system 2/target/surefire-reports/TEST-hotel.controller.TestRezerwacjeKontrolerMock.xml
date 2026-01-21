@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="hotel.dao.TestGoscieDAO" time="0.03" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="hotel.controller.TestRezerwacjeKontrolerMock" time="0.708" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,6 +7,7 @@
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Warsaw"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -56,9 +57,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testZapisz_Null_RzucaWyjatek" classname="hotel.dao.TestGoscieDAO" time="0.012">
-    <system-out><![CDATA[Rozpoczęcie testów klasy GoscieDAO
+  <testcase name="testUtworzRezerwacje_NullParametry" classname="hotel.controller.TestRezerwacjeKontrolerMock" time="0.687">
+    <system-out><![CDATA[Rozpoczęcie testów RezerwacjeKontroler z Mockito
 ]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/gsk/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.9/byte-buddy-agent-1.14.9.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
   </testcase>
-  <testcase name="testAktualizuj_Null" classname="hotel.dao.TestGoscieDAO" time="0.001"/>
+  <testcase name="testUtworzRezerwacje_NieprawidloweDaty" classname="hotel.controller.TestRezerwacjeKontrolerMock" time="0.003"/>
+  <testcase name="testAnulujRezerwacje_NieprawidloweId" classname="hotel.controller.TestRezerwacjeKontrolerMock" time="0.002"/>
+  <testcase name="testModyfikujRezerwacje_NieprawidloweDaty" classname="hotel.controller.TestRezerwacjeKontrolerMock" time="0.002"/>
+  <testcase name="testPobierzOplateZaAnulowanie_NieprawidloweId" classname="hotel.controller.TestRezerwacjeKontrolerMock" time="0.002"/>
 </testsuite>

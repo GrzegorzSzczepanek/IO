@@ -112,7 +112,7 @@ mvn compile
 mvn exec:java -Dexec.mainClass="hotel.Main"
 
 # Uruchomienie WSZYSTKICH testów
-mvn test
+   mvn test
 
 # Uruchomienie konkretnej klasy testów
 mvn test -Dtest=TestPokoj

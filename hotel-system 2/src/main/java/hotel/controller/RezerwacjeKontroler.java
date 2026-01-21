@@ -46,6 +46,14 @@ public class RezerwacjeKontroler implements IRezerwacjeKontroler {
         }
         return model.anulujRezerwacje(idRezerwacji);
     }
+
+    @Override
+    public boolean anulujRezerwacje(int idRezerwacji, String przyczyna) {
+        if (idRezerwacji <= 0) {
+            return false;
+        }
+        return model.anulujRezerwacje(idRezerwacji, przyczyna);
+    }
     
     @Override
     public boolean modyfikujRezerwacje(int idRezerwacji, LocalDate nowaDataOd, LocalDate nowaDataDo) {

@@ -29,6 +29,14 @@ public interface IRezerwacjeKontroler {
      * @return true jeśli anulowano
      */
     boolean anulujRezerwacje(int idRezerwacji);
+
+    /**
+     * Anuluje rezerwację z przyczyną.
+     * @param idRezerwacji ID rezerwacji
+     * @param przyczyna przyczyna anulowania
+     * @return true jeśli anulowano
+     */
+    boolean anulujRezerwacje(int idRezerwacji, String przyczyna);
     
     /**
      * Modyfikuje rezerwację.

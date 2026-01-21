@@ -4,6 +4,7 @@ hotel/model/TestDodatki.class
 hotel/suite/SuiteTestyWalidacji.class
 hotel/controller/TestWymeldowanieKontrolerMock.class
 hotel/suite/SuiteTestyEncji.class
+hotel/model/TestHotelModelCancellations.class
 hotel/dao/TestGoscieDAO.class
 hotel/suite/SuiteTestyKontroli.class
 hotel/controller/TestZameldowanieKontrolerMock.class

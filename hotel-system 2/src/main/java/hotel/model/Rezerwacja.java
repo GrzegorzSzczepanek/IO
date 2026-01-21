@@ -24,6 +24,7 @@ public class Rezerwacja {
     private Pokoj pokoj;
     private List<IDodatek> dodatki;
     private Status status;
+    private String przyczynaAnulowania;
     
     private static int nextId = 1;
     
@@ -235,12 +236,34 @@ public class Rezerwacja {
     }
     
     /**
+     * Anuluje rezerwację z podaniem przyczyny.
+     * @param przyczyna przyczyna anulowania
+     * @return true jeśli anulowano pomyślnie
+     */
+    public boolean anuluj(String przyczyna) {
+        if (status == Status.WYMELDOWANA || status == Status.ANULOWANA) {
+            return false;
+        }
+        this.status = Status.ANULOWANA;
+        this.przyczynaAnulowania = przyczyna;
+        return true;
+    }
+
+    /**
      * Resetuje licznik ID (używane w testach).
      */
     public static void resetIdCounter() {
         nextId = 1;
     }
-    
+
+    /**
+     * Zwraca przyczynę anulowania rezerwacji.
+     * @return przyczyna anulowania lub null jeśli rezerwacja nie została anulowana
+     */
+    public String getPrzyczynaAnulowania() {
+        return przyczynaAnulowania;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -256,14 +279,19 @@ public class Rezerwacja {
     
     @Override
     public String toString() {
-        return "Rezerwacja{" +
-                "id=" + id +
-                ", dataOd=" + dataOd +
-                ", dataDo=" + dataDo +
-                ", gosc=" + gosc.getPelneNazwisko() +
-                ", pokoj=" + pokoj.getNumer() +
-                ", status=" + status +
-                ", cena=" + obliczCene() +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Rezerwacja{");
+        sb.append("id=").append(id);
+        sb.append(", dataOd=").append(dataOd);
+        sb.append(", dataDo=").append(dataDo);
+        sb.append(", gosc=").append(gosc.getPelneNazwisko());
+        sb.append(", pokoj=").append(pokoj.getNumer());
+        sb.append(", status=").append(status);
+        sb.append(", cena=").append(obliczCene());
+        if (status == Status.ANULOWANA && przyczynaAnulowania != null) {
+            sb.append(", przyczyna_anulowania='").append(przyczynaAnulowania).append('\'');
+        }
+        sb.append('}');
+        return sb.toString();
     }
 }

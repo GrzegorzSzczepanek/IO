@@ -105,7 +105,7 @@ public class Main {
         
         // Anulowanie rezerwacji
         System.out.println("\n8. Anulowanie rezerwacji:");
-        Rezerwacja rez3 = model.utworzRezerwacje(gosc1, pokoj101, 
+        Rezerwacja rez3 = model.utworzRezerwacje(gosc1, pokoj101,
             LocalDate.of(2025, 8, 1), LocalDate.of(2025, 8, 5));
         System.out.println("   - Rezerwacja: " + rez3.getId() + ", Status: " + rez3.getStatus());
         double oplataAnulowanie = rezKontroler.pobierzOplateZaAnulowanie(rez3.getId());
@@ -113,6 +113,39 @@ public class Main {
         boolean anulowano = rezKontroler.anulujRezerwacje(rez3.getId());
         System.out.println("   - Anulowanie: " + (anulowano ? "SUKCES" : "BŁĄD"));
         System.out.println("   - Status po: " + rez3.getStatus());
+
+        // Demonstracja nowych funkcji anulowania
+        System.out.println("\n9. Nowe funkcje anulowania:");
+        // Tworzymy rezerwację na przyszłość (10 dni od dziś)
+        LocalDate dataOdNowa = LocalDate.now().plusDays(10);
+        LocalDate dataDoNowa = LocalDate.now().plusDays(15);
+        Rezerwacja rez4 = model.utworzRezerwacje(gosc2, pokoj301, dataOdNowa, dataDoNowa);
+        System.out.println("   - Rezerwacja przyszła: " + rez4 + ", Status: " + rez4.getStatus());
+
+        // Sprawdzamy opłatę za anulowanie wcześnie (powinna być 0)
+        double oplataWczesna = rezKontroler.pobierzOplateZaAnulowanie(rez4.getId());
+        System.out.println("   - Opłata za wcześniejsze anulowanie (>=7 dni): " + oplataWczesna + " zł");
+
+        // Anulowanie z przyczyną (używamy referencji do konkretnej klasy)
+        RezerwacjeKontroler rzKontroler = new RezerwacjeKontroler(model);
+        boolean anulowanoZPrzyczyna = rzKontroler.anulujRezerwacje(rez4.getId(), "Zmiana planów podróży");
+        System.out.println("   - Anulowanie z przyczyną: " + (anulowanoZPrzyczyna ? "SUKCES" : "BŁĄD"));
+        System.out.println("   - Rezerwacja po anulowaniu: " + rez4);
+
+        // Demonstracja anulowania z opłatą zależną od czasu
+        System.out.println("\n10. Anulowanie z opłatą zależną od czasu:");
+        // Tworzymy rezerwację na jutro (blisko daty)
+        LocalDate dataOdBlisko = LocalDate.now().plusDays(2); // 2 dni od dziś
+        LocalDate dataDoBlisko = LocalDate.now().plusDays(4);
+        Rezerwacja rez5 = model.utworzRezerwacje(gosc1, pokoj201, dataOdBlisko, dataDoBlisko);
+        System.out.println("   - Rezerwacja blisko terminu: " + rez5 + ", Status: " + rez5.getStatus());
+
+        double oplataBliska = rezKontroler.pobierzOplateZaAnulowanie(rez5.getId());
+        System.out.println("   - Opłata za anulowanie (2 dni przed): " + oplataBliska + " zł");
+
+        boolean anulowanoBlisko = rzKontroler.anulujRezerwacje(rez5.getId(), "Nagła choroba");
+        System.out.println("   - Anulowanie z opłatą: " + (anulowanoBlisko ? "SUKCES" : "BŁĄD"));
+        System.out.println("   - Rezerwacja po anulowaniu: " + rez5);
         
         // ========== PODSUMOWANIE ==========
         System.out.println("\n>>> PODSUMOWANIE <<<\n");
