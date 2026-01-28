@@ -1,0 +1,23 @@
+---
+Test
+---
+!3 Test przypadku użycia: Wymelduj Gościa
+
+'''Autor:''' Lukerya Prakofyeva
+
+'''Kontroler:''' WymeldowanieKontroler.wymeldujGoscia(int idRezerwacji)
+
+!|hotel.testyfitnesse.TestWymeldujGoscia|
+|idRezerwacji|wymeldujGoscia?|dajStatusRezerwacji?|dajLiczbeWymeldowanych?|
+|3           |true           |WYMELDOWANA         |1                      |
+|1           |false          |NOWA                |1                      |
+|2           |false          |POTWIERDZONA        |1                      |
+|3           |false          |WYMELDOWANA         |1                      |
+|999         |false          |BRAK                |1                      |
+
+'''Opis scenariuszy:'''
+ * Wiersz 1: Wymeldowanie rezerwacji ZAMELDOWANEJ (ID=3) - sukces
+ * Wiersz 2: Wymeldowanie rezerwacji NOWEJ (ID=1) - nie można (nie zameldowany)
+ * Wiersz 3: Wymeldowanie rezerwacji POTWIERDZONEJ (ID=2) - nie można
+ * Wiersz 4: Ponowne wymeldowanie już WYMELDOWANEJ (ID=3) - nie można
+ * Wiersz 5: Wymeldowanie nieistniejącej rezerwacji - nie można

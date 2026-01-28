@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20220319</FitNesseVersion>
+  <rootPath>HotelSystem.AnulujRezerwacje</rootPath>
+  <result>
+    <counts>
+      <right>12</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2026-01-28T18:02:49+01:00</date>
+    <runTimeInMillis>10</runTimeInMillis>
+    <content>&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="HotelSystem.SetUp"&gt;.HotelSystem.SetUp&lt;/a&gt; &lt;a href="HotelSystem.SetUp?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;hotel.testyfitnesse.SetUp&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;h3 id="0"&gt;Test przypadku użycia: Anuluj Rezerwację&lt;/h3&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="4"&gt;hotel.testyfitnesse.TestAnulujRezerwacje&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;idRezerwacji&lt;/td&gt;
+		&lt;td&gt;anulujRezerwacje?&lt;/td&gt;
+		&lt;td&gt;dajStatusRezerwacji?&lt;/td&gt;
+		&lt;td&gt;dajLiczbeRezerwacjiAnulowanych?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;1&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="pass"&gt;ANULOWANA&lt;/td&gt;
+		&lt;td class="pass"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="pass"&gt;ANULOWANA&lt;/td&gt;
+		&lt;td class="pass"&gt;2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="pass"&gt;ANULOWANA&lt;/td&gt;
+		&lt;td class="pass"&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;999&lt;/td&gt;
+		&lt;td class="pass"&gt;false&lt;/td&gt;
+		&lt;td class="pass"&gt;BRAK&lt;/td&gt;
+		&lt;td class="pass"&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>AnulujRezerwacje</relativePageName>
+  </result>
+  <executionLog>
+    <testSystem>fit:fit.FitServer</testSystem>
+    <command>/Users/gsk/.sdkman/candidates/java/current/bin/java -cp /Users/gsk/documents/projects/5sem/IO/hotel-system-fitnesse/target/classes:/Users/gsk/documents/projects/5sem/IO/hotel-system-fitnesse/lib/fitnesse-standalone.jar fit.FitServer Grzegorzs-MacBook-Air-2.local 60305 3863</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>1</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>10367</totalRunTimeInMillis>
+</testResults>
+

@@ -1,0 +1,217 @@
+# =============================================================================
+# STRONY FITNESSE DLA SYSTEMU HOTELOWEGO
+# =============================================================================
+# Ten plik zawiera treści stron do utworzenia w FitNesse.
+# Skopiuj odpowiednie sekcje do edytora stron FitNesse.
+# =============================================================================
+
+================================================================================
+STRONA: HotelSystem (Suite Page)
+================================================================================
+Nazwa strony: HotelSystem
+Typ: Suite Page (Add → Suite Page)
+--------------------------------------------------------------------------------
+
+!contents -R2 -g -p -f -h
+
+'''Testy akceptacyjne systemu zarządzania hotelem'''
+
+System hotelowy umożliwia:
+ * Zarządzanie rezerwacjami (tworzenie, anulowanie, modyfikacja)
+ * Zameldowanie gości
+ * Wymeldowanie gości
+ * Zarządzanie profilami gości
+
+'''Autorzy testów:'''
+ * Grzegorz Szczepanek - Anuluj Rezerwację
+ * Iuliia Kapustinskaia - Zamelduj Gościa
+ * Lukerya Prakofyeva - Wymelduj Gościa
+
+!path ${PROJECT_PATH}/target/classes
+!path ${PROJECT_PATH}/lib/fitnesse-standalone.jar
+
+---
+UWAGA: Zamień ${PROJECT_PATH} na rzeczywistą ścieżkę do projektu, np.:
+!path /Users/gsk/documents/projects/5sem/IO/hotel-system/target/classes
+!path /Users/gsk/documents/projects/5sem/IO/hotel-system/lib/fitnesse-standalone.jar
+---
+
+
+================================================================================
+STRONA: SetUp (Static Page) - wewnątrz HotelSystem
+================================================================================
+Nazwa strony: SetUp
+Typ: Static Page (Add → Static Page)
+--------------------------------------------------------------------------------
+
+|import|
+|hotel.testyfitnesse|
+
+!|hotel.testyfitnesse.SetUp|
+
+
+================================================================================
+STRONA: AnulujRezerwacje (Test Page) - wewnątrz HotelSystem
+================================================================================
+Nazwa strony: AnulujRezerwacje
+Typ: Test Page (Add → Test Page)
+--------------------------------------------------------------------------------
+
+!3 Test przypadku użycia: Anuluj Rezerwację
+
+'''Opis:''' Test sprawdza poprawność działania operacji anulowania rezerwacji hotelowej.
+
+'''Kontroler:''' RezerwacjeKontroler.anulujRezerwacje(int idRezerwacji)
+
+'''Autor:''' Grzegorz Szczepanek
+
+----
+
+!|hotel.testyfitnesse.TestAnulujRezerwacje|
+|idRezerwacji|anulujRezerwacje?|dajStatusRezerwacji?|dajLiczbeRezerwacjiAnulowanych?|
+|1           |true             |ANULOWANA           |1                              |
+|2           |false            |POTWIERDZONA        |1                              |
+|3           |false            |ZAMELDOWANA         |1                              |
+|999         |false            |BRAK                |1                              |
+|0           |false            |BRAK                |1                              |
+|-1          |false            |BRAK                |1                              |
+
+----
+
+'''Opis scenariuszy testowych:'''
+ * Wiersz 1: Anulowanie rezerwacji o statusie NOWA - powinno się powieść
+ * Wiersz 2: Anulowanie rezerwacji POTWIERDZONEJ - nie powinno się powieść (już potwierdzona)
+ * Wiersz 3: Anulowanie rezerwacji ZAMELDOWANEJ - nie powinno się powieść (gość jest w hotelu)
+ * Wiersz 4: Anulowanie nieistniejącej rezerwacji (ID=999) - powinno zwrócić false
+ * Wiersz 5: Anulowanie z nieprawidłowym ID (0) - powinno zwrócić false
+ * Wiersz 6: Anulowanie z ujemnym ID (-1) - powinno zwrócić false
+
+
+================================================================================
+STRONA: ZameldujGoscia (Test Page) - wewnątrz HotelSystem
+================================================================================
+Nazwa strony: ZameldujGoscia
+Typ: Test Page (Add → Test Page)
+--------------------------------------------------------------------------------
+
+!3 Test przypadku użycia: Zamelduj Gościa
+
+'''Opis:''' Test sprawdza poprawność działania operacji zameldowania gościa na podstawie rezerwacji.
+
+'''Kontroler:''' ZameldowanieKontroler.zameldujGoscia(int idRezerwacji)
+
+'''Autor:''' Iuliia Kapustinskaia
+
+----
+
+!|hotel.testyfitnesse.TestZameldujGoscia|
+|idRezerwacji|zameldujGoscia?|dajStatusRezerwacji?|dajLiczbeZameldowanych?|
+|2           |true           |ZAMELDOWANA         |2                      |
+|1           |false          |NOWA                |2                      |
+|3           |false          |ZAMELDOWANA         |2                      |
+|999         |false          |BRAK                |2                      |
+|0           |false          |BRAK                |2                      |
+
+----
+
+'''Opis scenariuszy testowych:'''
+ * Wiersz 1: Zameldowanie rezerwacji POTWIERDZONEJ (ID=2) - powinno się powieść
+ * Wiersz 2: Zameldowanie rezerwacji NOWEJ (ID=1) - nie powinno się powieść (wymaga potwierdzenia)
+ * Wiersz 3: Ponowne zameldowanie już ZAMELDOWANEJ rezerwacji (ID=3) - nie powinno się powieść
+ * Wiersz 4: Zameldowanie nieistniejącej rezerwacji (ID=999) - powinno zwrócić false
+ * Wiersz 5: Zameldowanie z nieprawidłowym ID (0) - powinno zwrócić false
+
+
+================================================================================
+STRONA: WymeldujGoscia (Test Page) - wewnątrz HotelSystem
+================================================================================
+Nazwa strony: WymeldujGoscia
+Typ: Test Page (Add → Test Page)
+--------------------------------------------------------------------------------
+
+!3 Test przypadku użycia: Wymelduj Gościa
+
+'''Opis:''' Test sprawdza poprawność działania operacji wymeldowania gościa z hotelu.
+
+'''Kontroler:''' WymeldowanieKontroler.wymeldujGoscia(int idRezerwacji)
+
+'''Autor:''' Lukerya Prakofyeva
+
+----
+
+!|hotel.testyfitnesse.TestWymeldujGoscia|
+|idRezerwacji|wymeldujGoscia?|dajStatusRezerwacji?|dajLiczbeWymeldowanych?|czyPokojDostepny?|
+|3           |true           |WYMELDOWANA         |1                      |true             |
+|1           |false          |NOWA                |1                      |false            |
+|2           |false          |POTWIERDZONA        |1                      |false            |
+|999         |false          |BRAK                |1                      |false            |
+|0           |false          |BRAK                |1                      |false            |
+
+----
+
+'''Opis scenariuszy testowych:'''
+ * Wiersz 1: Wymeldowanie rezerwacji ZAMELDOWANEJ (ID=3) - powinno się powieść, pokój zwolniony
+ * Wiersz 2: Wymeldowanie rezerwacji NOWEJ (ID=1) - nie powinno się powieść (gość nie zameldowany)
+ * Wiersz 3: Wymeldowanie rezerwacji POTWIERDZONEJ (ID=2) - nie powinno się powieść
+ * Wiersz 4: Wymeldowanie nieistniejącej rezerwacji (ID=999) - powinno zwrócić false
+ * Wiersz 5: Wymeldowanie z nieprawidłowym ID (0) - powinno zwrócić false
+
+----
+
+!3 Test opłaty za późne wymeldowanie
+
+!|hotel.testyfitnesse.TestWymeldujGoscia|
+|idRezerwacji|godzinyOpoznienia|dajOplateZaPozneWymeldowanie?|
+|3           |0                |0.0                          |
+|3           |1                |25.0                         |
+|3           |2                |50.0                         |
+|3           |3                |75.0                         |
+|999         |2                |0.0                          |
+
+
+================================================================================
+STRONA FrontPage - AKTUALIZACJA
+================================================================================
+Wejdź na stronę: http://localhost:8080/FrontPage
+Kliknij Edit i dodaj link do zestawu testów:
+--------------------------------------------------------------------------------
+
+!1 FitNesse
+
+!2 System Hotelowy - Testy Akceptacyjne
+
+[[Testy akceptacyjne systemu hotelowego][HotelSystem]]
+
+
+================================================================================
+INSTRUKCJA TWORZENIA STRON
+================================================================================
+
+1. Uruchom FitNesse: ./start_fitnesse.sh (lub java -jar fitnesse-standalone.jar -p 8080)
+
+2. Otwórz przeglądarkę: http://localhost:8080
+
+3. Utwórz Suite Page "HotelSystem":
+   - Kliknij Add → Suite Page
+   - Wpisz nazwę: HotelSystem
+   - Skopiuj treść z sekcji "STRONA: HotelSystem"
+   - Kliknij Save
+
+4. Wejdź na stronę HotelSystem i utwórz SetUp:
+   - Kliknij Add → Static Page
+   - Wpisz nazwę: SetUp
+   - Skopiuj treść z sekcji "STRONA: SetUp"
+   - Kliknij Save
+
+5. Utwórz strony testowe (Test Page) dla każdego przypadku użycia:
+   - AnulujRezerwacje
+   - ZameldujGoscia
+   - WymeldujGoscia
+
+6. Zaktualizuj FrontPage - dodaj link do HotelSystem
+
+7. Uruchom testy:
+   - Pojedynczy test: wejdź na stronę testu → kliknij Test
+   - Cały zestaw: wejdź na HotelSystem → kliknij Suite
+
+================================================================================

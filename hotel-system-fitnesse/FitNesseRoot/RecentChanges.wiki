@@ -1,4 +1,6 @@
-|HotelSystem.AnulujRezerwacje||08:32:32 Wed, Jan 28, 2026|
-|HotelSystem.SetUp||08:29:28 Wed, Jan 28, 2026|
+|HotelSystem.SetUp||18:02:33 Wed, Jan 28, 2026|
+|HotelSystem.WymeldujGoscia||16:45:58 Wed, Jan 28, 2026|
+|HotelSystem.ZameldujGoscia||16:45:38 Wed, Jan 28, 2026|
+|HotelSystem.AnulujRezerwacje||14:06:10 Wed, Jan 28, 2026|
 |HotelSystem||08:28:25 Wed, Jan 28, 2026|
 |FrontPage||08:28:08 Wed, Jan 28, 2026|

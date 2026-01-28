@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20220319</FitNesseVersion>
+  <rootPath>HotelSystem.WymeldujGoscia</rootPath>
+  <result>
+    <counts>
+      <right>15</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>1</exceptions>
+    </counts>
+    <date>2026-01-28T16:46:21+01:00</date>
+    <runTimeInMillis>35</runTimeInMillis>
+    <content>&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="HotelSystem.SetUp"&gt;.HotelSystem.SetUp&lt;/a&gt; &lt;a href="HotelSystem.SetUp?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td class="error"&gt;import&lt;hr/&gt; &lt;span class="fit_label"&gt;Could not find fixture: import.&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;hotel.testyfitnesse&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;hotel.testyfitnesse.SetUp&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;h3 id="0"&gt;Test przypadku użycia: Wymelduj Gościa&lt;/h3&gt;
+&lt;br/&gt;&lt;b&gt;Autor:&lt;/b&gt; Lukerya Prakofyeva&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Kontroler:&lt;/b&gt; WymeldowanieKontroler&lt;a title="create page" href="HotelSystem.WymeldowanieKontroler?edit&amp;amp;nonExistent=true"&gt;[?]&lt;/a&gt;.wymeldujGoscia(int idRezerwacji)&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="4"&gt;hotel.testyfitnesse.TestWymeldujGoscia&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;idRezerwacji&lt;/td&gt;
+		&lt;td&gt;wymeldujGoscia?&lt;/td&gt;
+		&lt;td&gt;dajStatusRezerwacji?&lt;/td&gt;
+		&lt;td&gt;dajLiczbeWymeldowanych?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td class="pass"&gt;true&lt;/td&gt;
+		&lt;td class="pass"&gt;WYMELDOWANA&lt;/td&gt;
+		&lt;td class="pass"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;1&lt;/td&gt;
+		&lt;td class="pass"&gt;false&lt;/td&gt;
+		&lt;td class="pass"&gt;NOWA&lt;/td&gt;
+		&lt;td class="pass"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td class="pass"&gt;false&lt;/td&gt;
+		&lt;td class="pass"&gt;POTWIERDZONA&lt;/td&gt;
+		&lt;td class="pass"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;3&lt;/td&gt;
+		&lt;td class="pass"&gt;false&lt;/td&gt;
+		&lt;td class="pass"&gt;WYMELDOWANA&lt;/td&gt;
+		&lt;td class="pass"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;999&lt;/td&gt;
+		&lt;td class="pass"&gt;false&lt;/td&gt;
+		&lt;td class="pass"&gt;BRAK&lt;/td&gt;
+		&lt;td class="pass"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;b&gt;Opis scenariuszy:&lt;/b&gt;&lt;br/&gt;&lt;ul&gt;
+	&lt;li&gt;Wiersz 1: Wymeldowanie rezerwacji ZAMELDOWANEJ (ID=3) - sukces&lt;/li&gt;
+	&lt;li&gt;Wiersz 2: Wymeldowanie rezerwacji NOWEJ (ID=1) - nie można (nie zameldowany)&lt;/li&gt;
+	&lt;li&gt;Wiersz 3: Wymeldowanie rezerwacji POTWIERDZONEJ (ID=2) - nie można&lt;/li&gt;
+	&lt;li&gt;Wiersz 4: Ponowne wymeldowanie już WYMELDOWANEJ (ID=3) - nie można&lt;/li&gt;
+	&lt;li&gt;Wiersz 5: Wymeldowanie nieistniejącej rezerwacji - nie można&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <relativePageName>WymeldujGoscia</relativePageName>
+  </result>
+  <executionLog>
+    <testSystem>fit:fit.FitServer</testSystem>
+    <command>/Users/gsk/.sdkman/candidates/java/current/bin/java -cp /Users/gsk/documents/projects/5sem/IO/hotel-system-fitnesse/target/classes:/Users/gsk/documents/projects/5sem/IO/hotel-system-fitnesse/lib/fitnesse-standalone.jar fit.FitServer Grzegorzs-MacBook-Air-2.local 63871 3863</command>
+    <exitCode>1</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>10471</totalRunTimeInMillis>
+</testResults>
+

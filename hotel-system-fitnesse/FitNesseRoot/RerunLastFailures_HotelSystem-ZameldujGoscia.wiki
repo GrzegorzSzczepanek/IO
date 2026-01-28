@@ -5,6 +5,6 @@ Suite
 
 !note This page is automatically generated when running tests. It will be overwritten by the next Suite or Test execution.
 
-Tests failed (first failure was at 2026-01-28T08:32:55.638959):
+Tests failed (first failure was at 2026-01-28T16:46:44.148114):
 
-!see [[HotelSystem.AnulujRezerwacje][.HotelSystem.AnulujRezerwacje]]
+!see [[HotelSystem.ZameldujGoscia][.HotelSystem.ZameldujGoscia]]

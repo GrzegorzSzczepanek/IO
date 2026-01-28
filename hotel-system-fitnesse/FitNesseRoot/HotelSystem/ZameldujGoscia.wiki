@@ -1,0 +1,23 @@
+---
+Test
+---
+!3 Test przypadku użycia: Zamelduj Gościa
+
+'''Autor:''' Iuliia Kapustinskaia
+
+'''Kontroler:''' ZameldowanieKontroler.zameldujGoscia(int idRezerwacji)
+
+!|hotel.testyfitnesse.TestZameldujGoscia|
+|idRezerwacji|zameldujGoscia?|dajStatusRezerwacji?|dajLiczbeZameldowanych?|
+|2           |true           |ZAMELDOWANA         |2                      |
+|1           |true           |ZAMELDOWANA         |3                      |
+|3           |false          |ZAMELDOWANA         |3                      |
+|999         |false          |BRAK                |3                      |
+|0           |false          |BRAK                |3                      |
+
+'''Opis scenariuszy:'''
+ * Wiersz 1: Zameldowanie rezerwacji POTWIERDZONEJ (ID=2) - sukces
+ * Wiersz 2: Zameldowanie rezerwacji NOWEJ (ID=1) - sukces
+ * Wiersz 3: Ponowne zameldowanie już ZAMELDOWANEJ (ID=3) - nie można
+ * Wiersz 4: Zameldowanie nieistniejącej rezerwacji - nie można
+ * Wiersz 5: Zameldowanie z nieprawidłowym ID - nie można
