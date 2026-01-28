@@ -1,0 +1,11 @@
+---
+Test
+---
+!3 Test przypadku użycia: Anuluj Rezerwację
+
+!|hotel.testyfitnesse.TestAnulujRezerwacje|
+|idRezerwacji|anulujRezerwacje?|dajStatusRezerwacji?|dajLiczbeRezerwacjiAnulowanych?|
+|1           |true             |ANULOWANA           |1                              |
+|2           |true             |ANULOWANA           |2                              |
+|3           |true             |ANULOWANA           |3                              |
+|999         |false            |BRAK                |3                              |

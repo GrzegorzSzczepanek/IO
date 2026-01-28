@@ -1,0 +1,5 @@
+!contents -R2 -g -p -f -h
+
+'''Testy akceptacyjne systemu zarządzania hotelem'''
+
+!path /Users/gsk/documents/projects/5sem/IO/hotel-system-fitnesse/target/classes

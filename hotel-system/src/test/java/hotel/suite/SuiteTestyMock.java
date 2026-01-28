@@ -9,7 +9,6 @@ import org.junit.platform.suite.api.*;
  * 
  * @author Grzegorz - System Zarządzania Hotelem
  */
-
 @Suite
 @SuiteDisplayName("Zestaw testów z mockowaniem (Mockito)")
 @SelectPackages({"hotel.controller"})

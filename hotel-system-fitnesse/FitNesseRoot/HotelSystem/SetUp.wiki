@@ -1,0 +1,4 @@
+|import|
+|hotel.testyfitnesse|
+
+!|hotel.testyfitnesse.SetUp|

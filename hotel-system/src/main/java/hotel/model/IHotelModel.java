@@ -43,6 +43,14 @@ public interface IHotelModel {
      * @return true jeśli anulowano pomyślnie
      */
     boolean anulujRezerwacje(int idRezerwacji);
+
+    /**
+     * Anuluje rezerwację z przyczyną.
+     * @param idRezerwacji ID rezerwacji do anulowania
+     * @param przyczyna przyczyna anulowania
+     * @return true jeśli anulowano pomyślnie
+     */
+    boolean anulujRezerwacje(int idRezerwacji, String przyczyna);
     
     /**
      * Modyfikuje daty rezerwacji.

@@ -379,4 +379,4 @@ class TestRezerwacjeKontrolerMock {
             "Wyjątek powinien być propagowany"
         );
     }
-
+}

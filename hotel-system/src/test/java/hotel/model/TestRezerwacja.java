@@ -293,16 +293,53 @@ class TestRezerwacja {
     void testAnuluj_JuzAnulowana() {
         // Jeśli: rezerwacja jest już anulowana
         rezerwacja.anuluj();
-        
+
         // Gdy: ponowna próba anulowania
         boolean wynik = rezerwacja.anuluj();
-        
+
         // Wtedy: zwrócone false
         assertFalse(wynik, "Ponowne anulowanie powinno zwrócić false");
     }
-    
+
     @Test
-    @Order(15)
+    @Order(17)
+    @DisplayName("anuluj z przyczyną zmienia status na ANULOWANA i ustawia przyczynę")
+    @Tag("status")
+    @Tag("encja")
+    void testAnulujZPrzyczyna_Sukces() {
+        // Jeśli: rezerwacja ma status NOWA
+        String przyczyna = "Zmiana planów";
+
+        // Gdy: anulowana jest rezerwacja z przyczyną
+        boolean wynik = rezerwacja.anuluj(przyczyna);
+
+        // Wtedy: status zmieniony na ANULOWANA i przyczyna ustawiona
+        assertTrue(wynik, "Anulowanie z przyczyną powinno się powieść");
+        assertEquals(Rezerwacja.Status.ANULOWANA, rezerwacja.getStatus());
+        assertEquals(przyczyna, rezerwacja.getPrzyczynaAnulowania());
+    }
+
+    @Test
+    @Order(18)
+    @DisplayName("anuluj z przyczyną zwraca false dla już anulowanej rezerwacji")
+    @Tag("status")
+    @Tag("walidacja")
+    void testAnulujZPrzyczyna_JuzAnulowana() {
+        // Jeśli: rezerwacja jest już anulowana
+        String przyczyna1 = "Choroba";
+        String przyczyna2 = "Zmiana planów";
+        rezerwacja.anuluj(przyczyna1);
+
+        // Gdy: ponowna próba anulowania z inną przyczyną
+        boolean wynik = rezerwacja.anuluj(przyczyna2);
+
+        // Wtedy: zwrócone false i pierwotna przyczyna zachowana
+        assertFalse(wynik, "Ponowne anulowanie powinno zwrócić false");
+        assertEquals(przyczyna1, rezerwacja.getPrzyczynaAnulowania());
+    }
+
+    @Test
+    @Order(19)
     @DisplayName("dodajDodatek zwraca false dla anulowanej rezerwacji")
     @Tag("dodatki")
     @Tag("status")

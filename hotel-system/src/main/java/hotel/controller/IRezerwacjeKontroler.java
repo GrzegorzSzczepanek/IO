@@ -1,5 +1,7 @@
 package hotel.controller;
 
+import hotel.model.Gosc;
+import hotel.model.Pokoj;
 import hotel.model.Rezerwacja;
 
 import java.time.LocalDate;
@@ -7,65 +9,54 @@ import java.util.List;
 
 /**
  * Interfejs kontrolera rezerwacji.
- * Warstwa: KONTROLER
- * 
- * Definiuje operacje dostępne dla warstwy prezentacji.
+ * Definiuje operacje związane z zarządzaniem rezerwacjami.
  */
 public interface IRezerwacjeKontroler {
     
     /**
      * Tworzy nową rezerwację.
-     * @param goscId ID gościa
-     * @param pokojNumer numer pokoju
-     * @param dataOd data rozpoczęcia
-     * @param dataDo data zakończenia
+     * @param gosc gość
+     * @param pokoj pokój
+     * @param dataOd data od
+     * @param dataDo data do
      * @return utworzona rezerwacja
      */
-    Rezerwacja utworzRezerwacje(int goscId, int pokojNumer, LocalDate dataOd, LocalDate dataDo);
+    Rezerwacja utworzRezerwacje(Gosc gosc, Pokoj pokoj, LocalDate dataOd, LocalDate dataDo);
     
     /**
      * Anuluje rezerwację.
-     * @param rezerwacjaId ID rezerwacji
-     * @return true jeśli anulowano pomyślnie
+     * @param idRezerwacji ID rezerwacji
+     * @return true jeśli anulowano
      */
-    boolean anulujRezerwacje(int rezerwacjaId);
+    boolean anulujRezerwacje(int idRezerwacji);
+
+    /**
+     * Anuluje rezerwację z przyczyną.
+     * @param idRezerwacji ID rezerwacji
+     * @param przyczyna przyczyna anulowania
+     * @return true jeśli anulowano
+     */
+    boolean anulujRezerwacje(int idRezerwacji, String przyczyna);
     
     /**
      * Modyfikuje rezerwację.
-     * @param rezerwacjaId ID rezerwacji
-     * @param nowaDataOd nowa data rozpoczęcia
-     * @param nowaDataDo nowa data zakończenia
-     * @return zmodyfikowana rezerwacja
+     * @param idRezerwacji ID rezerwacji
+     * @param nowaDataOd nowa data od
+     * @param nowaDataDo nowa data do
+     * @return true jeśli zmodyfikowano
      */
-    Rezerwacja modyfikujRezerwacje(int rezerwacjaId, LocalDate nowaDataOd, LocalDate nowaDataDo);
+    boolean modyfikujRezerwacje(int idRezerwacji, LocalDate nowaDataOd, LocalDate nowaDataDo);
     
     /**
-     * Przegląda zarezerwowane pokoje w danym okresie.
-     * @param dataOd data początkowa
-     * @param dataDo data końcowa
+     * Przegląda zarezerwowane pokoje.
      * @return lista rezerwacji
      */
-    List<Rezerwacja> przegladajZarezerwowanePokoje(LocalDate dataOd, LocalDate dataDo);
+    List<Rezerwacja> przegladajZarezerwowanePokoje();
     
     /**
-     * Pobiera opłatę za anulowanie (stała 20%).
-     * @param rezerwacjaId ID rezerwacji
+     * Pobiera opłatę za anulowanie.
+     * @param idRezerwacji ID rezerwacji
      * @return kwota opłaty
      */
-    double pobierzOplateZaAnulowanie(int rezerwacjaId);
-    
-    /**
-     * Oblicza opłatę za anulowanie z uwzględnieniem terminu.
-     * @param rezerwacjaId ID rezerwacji
-     * @return kwota opłaty zależna od terminu
-     */
-    double obliczOplateZaAnulowanieZTerminem(int rezerwacjaId);
-    
-    /**
-     * Pobiera rezerwację po ID.
-     * @param rezerwacjaId ID rezerwacji
-     * @return rezerwacja lub null
-     */
-    Rezerwacja pobierzRezerwacje(int rezerwacjaId);
+    double pobierzOplateZaAnulowanie(int idRezerwacji);
 }
-
